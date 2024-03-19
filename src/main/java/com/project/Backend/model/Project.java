@@ -1,9 +1,6 @@
 package com.project.Backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -12,9 +9,18 @@ public class Project {
 
 	@Id
 	private long projectId;
+
 	private String projectName;
+
+	private String projectHeadName;
 
 	@OneToOne
 	@JoinColumn
 	private Employee employee;
+
+	public Project(long projectId, String projectName, String projectHeadName) {
+		this.projectId = projectId;
+		this.projectName = projectName;
+		this.projectHeadName = projectHeadName;
+	}
 }

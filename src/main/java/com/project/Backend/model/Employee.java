@@ -29,6 +29,7 @@ public class Employee {
 	@Column(name="email_id", nullable = true, unique = true)
 	private String emailId;
 
+
 	@OneToOne(mappedBy = "employee",cascade = CascadeType.ALL)
 	private Project project;
 	

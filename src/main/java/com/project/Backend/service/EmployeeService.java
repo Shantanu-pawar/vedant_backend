@@ -48,12 +48,10 @@ public class EmployeeService {
 	
 	public List<Employee> load() {
 		List<Employee> employees = new ArrayList<Employee>(Arrays.asList(
-				
 						new Employee(1,"Vedant","Jakatdar","vedant@tcs.com"),
 						new Employee(2,"Shubham","Jadhav","shubham@capgemini.com"),
 						new Employee(3,"Sandip","Khaire","sandip@polycab.com"),
 						new Employee(4,"Rohan","Chavan","rohan@hdfc.com")
-				
 				));
 				
 		return repo.saveAll(employees);
