@@ -1,17 +1,16 @@
-package com.project.Backend.Dto;
+package com.project.EmployeeManagement.Dto.Projects;
 
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
-public class AddProjDto {
+public class AssignProjectDto {
 
-    private long projectId;
     private String projectName;
-    private String projectHeadName;
-    private String employeeEmail;
 
+    private String projectHeadName;
+
+    private long empId;
 }

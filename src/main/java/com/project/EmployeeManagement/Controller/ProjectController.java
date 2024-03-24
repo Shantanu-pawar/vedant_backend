@@ -1,13 +1,12 @@
-package com.project.Backend.Controller;
+package com.project.EmployeeManagement.Controller;
 
-import com.project.Backend.Dto.AddProjDto;
-import com.project.Backend.service.ProjectService;
+import com.project.EmployeeManagement.Dto.Projects.AssignProjectDto;
+import com.project.EmployeeManagement.service.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +18,8 @@ public class ProjectController {
 
     @Autowired private ProjectService projectService;
 
-
-    @PostMapping("/register")
-    public ResponseEntity<?> addProject(@RequestBody AddProjDto dto){
+    @PostMapping("/create-and-assign-project")
+    public ResponseEntity<?> assignProject(@RequestBody AssignProjectDto dto){
         try {
             String response = projectService.addProject(dto);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
